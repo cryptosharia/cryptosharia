@@ -18,6 +18,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content={logo1} />
 </svelte:head>
+
 <section
   class="flex w-full flex-row flex-wrap items-start justify-center gap-6 px-6 pt-5 md:gap-8 lg:gap-10"
 >
