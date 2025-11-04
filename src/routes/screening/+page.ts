@@ -1,15 +1,30 @@
 import type { PageLoad } from './$types';
 import { getTokens } from '../../services/token-service';
+import { getTokensCount } from '../../services/token-service';
+import { countPaginationRange } from '../../utils';
 
 export const load: PageLoad = async ({ url, fetch }) => {
-  const search = url.searchParams.get('search');
+  try {
+    const search = url.searchParams.get('search') || undefined;
+    const page = parseInt(url.searchParams.get('page') || '1');
+    const tokensCountPerPage = 25;
 
-  const tokens = await getTokens(fetch, url.origin, {
-    range: [1, 25],
-    keyword: search ?? undefined
-  });
+    const tokensCountAsync = getTokensCount(fetch, url.origin);
 
-  return {
-    tokens
-  };
+    const tokensAsync = getTokens(fetch, url.origin, {
+      range: countPaginationRange(page, tokensCountPerPage),
+      keyword: search
+    });
+
+    return {
+      tokens: await tokensAsync,
+      pagesCount: Math.ceil((await tokensCountAsync) / tokensCountPerPage)
+    };
+  } catch (error: any) {
+    console.error(error);
+    return {
+      tokens: [],
+      pagesCount: 0
+    };
+  }
 };

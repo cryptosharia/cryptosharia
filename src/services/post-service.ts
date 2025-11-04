@@ -18,7 +18,7 @@ async function mapRowToModel(post: any, includeContent?: boolean): Promise<Post>
 }
 
 export async function getPosts(
-  fetch: any,
+  fetch: (typeof globalThis)['fetch'],
   baseUrl: string,
   params: {
     slug?: string;
@@ -57,6 +57,33 @@ export async function getPosts(
     // meaning that the posts will be an array of promises,
     // so we need to wait for all the promises to resolve
     return await Promise.all(posts);
+  } catch (error: any) {
+    console.error(error);
+    throw new Error(error.toString());
+  }
+}
+
+export async function getPostsCount(
+  fetch: (typeof globalThis)['fetch'],
+  baseUrl: string,
+  params: {
+    category?: 'activity' | 'article';
+  } = {}
+) {
+  try {
+    const url = new URL(baseUrl + '/api/posts/count');
+
+    if (params.category) url.searchParams.set('category', params.category);
+
+    const res = await fetch(url);
+
+    if (!res.ok) throw new Error('Failed to fetch posts count');
+
+    const result = await res.json();
+
+    if (result.error) throw new Error(result.message);
+
+    return result.data as number;
   } catch (error: any) {
     console.error(error);
     throw new Error(error.toString());

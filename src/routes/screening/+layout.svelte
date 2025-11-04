@@ -4,12 +4,16 @@
   import Chip from '../../components/Chip.svelte';
   import Divider from '../../components/Divider.svelte';
   import { capitalizeFirstLetter, getUrlLastSegment } from '../../utils';
-  import { navigating } from '$app/state';
+  import { navigating, page } from '$app/state';
+  import Pagination from '../../components/Pagination.svelte';
 
   let { children } = $props();
   const categories = ['Semua', 'Halal', 'Haram', 'Syubhat'];
 
   let selectedCategory = $state('Semua');
+
+  let currentPage = $derived(parseInt(page.url.searchParams.get('page') || '1'));
+  let pagesCount = $derived(page.data.pagesCount);
 
   onMount(() => {
     const lastSegment = getUrlLastSegment().toLowerCase();
@@ -91,4 +95,16 @@
     </div>
   </div>
   {@render children?.()}
+  <section class="mt-10 flex justify-center">
+    <Pagination
+      {currentPage}
+      {pagesCount}
+      onPageChange={(currentPage: number) => {
+        const url = new URL(page.url.href);
+        url.searchParams.set('page', currentPage.toString());
+
+        goto(url);
+      }}
+    />
+  </section>
 </main>

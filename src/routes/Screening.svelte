@@ -25,10 +25,10 @@
             color={token.color}
             status={token.status}
             logoUrl={token.logoUrl}
-            isHiddenOnXS={i >= 6}
-            isHiddenOnSM={i >= 6}
-            isHiddenOnMD={i >= 6}
-            isHiddenOnLG={i >= 8}
+            isHiddenOnXS={i >= 8}
+            isHiddenOnSM={i >= 9}
+            isHiddenOnMD={i >= 9}
+            isHiddenOnLG={i >= 12}
           />
         {/each}
       {/if}

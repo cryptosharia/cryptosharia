@@ -1,12 +1,29 @@
 import type { PageLoad } from './$types';
-import { getPosts } from '../../services/post-service';
+import { getPosts, getPostsCount } from '../../services/post-service';
+import { countPaginationRange } from '../../utils';
 
 export const load: PageLoad = async ({ url, fetch }) => {
-  const search = url.searchParams.get('search');
+  try {
+    const search = url.searchParams.get('search') || undefined;
+    const page = parseInt(url.searchParams.get('page') || '1');
+    const postsCountPerPage = 12;
 
-  const posts = await getPosts(fetch, url.origin, { range: [1, 12], keyword: search ?? undefined });
+    const postsCountAsync = getPostsCount(fetch, url.origin);
 
-  return {
-    posts
-  };
+    const postsAsync = getPosts(fetch, url.origin, {
+      range: countPaginationRange(page, postsCountPerPage),
+      keyword: search
+    });
+
+    return {
+      posts: await postsAsync,
+      pagesCount: Math.ceil((await postsCountAsync) / postsCountPerPage)
+    };
+  } catch (error: any) {
+    console.error(error);
+    return {
+      posts: [],
+      pagesCount: 0
+    };
+  }
 };

@@ -101,3 +101,30 @@ export async function getTokenQuotes(
     throw new Error(error.toString());
   }
 }
+
+export async function getTokensCount(
+  fetch: (typeof globalThis)['fetch'],
+  baseUrl: string,
+  params: {
+    status?: 'halal' | 'haram' | 'syubhat';
+  } = {}
+) {
+  try {
+    const url = new URL(baseUrl + '/api/tokens/count');
+
+    if (params.status) url.searchParams.set('status', params.status);
+
+    const res = await fetch(url);
+
+    if (!res.ok) throw new Error('Failed to fetch tokens count');
+
+    const result = await res.json();
+
+    if (result.error) throw new Error(result.message);
+
+    return result.data as number;
+  } catch (error: any) {
+    console.error(error);
+    throw new Error(error.toString());
+  }
+}

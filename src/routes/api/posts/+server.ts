@@ -8,7 +8,7 @@ export const GET = async ({ url }) => {
     const skip = url.searchParams.get('skip'); // e.g. "slug-a,slug-b,slug-c"
     const range = url.searchParams.get('range'); // e.g. "1,10"
 
-    let query = supabase.from('posts').select('*', { count: 'exact' });
+    let query = supabase.from('posts').select('*');
 
     // Filter by slug
     if (slug) {
@@ -39,7 +39,7 @@ export const GET = async ({ url }) => {
 
     query = query.order('date', { ascending: false });
 
-    const { data: posts, error, count } = await query;
+    const { data: posts, error } = await query;
 
     if (error) throw new Error(error.message);
 
@@ -47,7 +47,6 @@ export const GET = async ({ url }) => {
       JSON.stringify({
         error: false,
         message: 'Fetching posts success',
-        count: count,
         data: posts
       }),
       {

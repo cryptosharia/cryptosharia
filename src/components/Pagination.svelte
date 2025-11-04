@@ -1,21 +1,21 @@
 <script lang="ts">
   let {
     currentPage,
-    totalPages,
+    pagesCount,
     onPageChange
-  }: { currentPage: number; totalPages: number; onPageChange: (page: number) => void } = $props();
+  }: { currentPage: number; pagesCount: number; onPageChange: (page: number) => void } = $props();
 
   // Ensure currentPage is within valid range
   $effect(() => {
     if (currentPage < 1) {
       onPageChange(1);
-    } else if (currentPage > totalPages) {
-      onPageChange(totalPages);
+    } else if (currentPage > pagesCount) {
+      onPageChange(pagesCount);
     }
   });
 
   const goToPage = (page: number) => {
-    if (page >= 1 && page <= totalPages) {
+    if (page >= 1 && page <= pagesCount) {
       onPageChange(page);
     }
   };
@@ -27,16 +27,16 @@
     let newDisplayedPages: number[] = [currentPage - 1, currentPage, currentPage + 1];
 
     // Filter out invalid pages
-    newDisplayedPages = newDisplayedPages.filter((page) => page >= 1 && page <= totalPages);
+    newDisplayedPages = newDisplayedPages.filter((page) => page >= 1 && page <= pagesCount);
 
     // If the first page is 1 and there are more than 3 pages, ensure we show the first three pages
-    if (newDisplayedPages[0] === 1 && totalPages >= 3) {
+    if (newDisplayedPages[0] === 1 && pagesCount >= 3) {
       newDisplayedPages = [1, 2, 3];
     }
 
-    // If the last page is totalPages and there are more than 3 pages, ensure we show the last three pages
-    if (newDisplayedPages[newDisplayedPages.length - 1] === totalPages && totalPages >= 3) {
-      newDisplayedPages = [totalPages - 2, totalPages - 1, totalPages];
+    // If the last page is pagesCount and there are more than 3 pages, ensure we show the last three pages
+    if (newDisplayedPages[newDisplayedPages.length - 1] === pagesCount && pagesCount >= 3) {
+      newDisplayedPages = [pagesCount - 2, pagesCount - 1, pagesCount];
     }
 
     // Update the displayedPages state
@@ -51,12 +51,12 @@
   {#each displayedPages as page}
     {@render paginationButton(page.toString())}
   {/each}
-  <!-- {#if totalPages > maxDisplayedPages}
-    {#if totalPages === 4}
+  <!-- {#if pagesCount > maxDisplayedPages}
+    {#if pagesCount === 4}
       {@render paginationButton('4')}
     {:else}
       <span class="flex items-center px-2 text-orange-600">...</span>
-      {@render paginationButton(totalPages.toString())}
+      {@render paginationButton(pagesCount.toString())}
     {/if}
   {/if} -->
   {@render paginationButton('>')}

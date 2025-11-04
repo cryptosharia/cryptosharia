@@ -13,7 +13,8 @@
 
   let selectedCategory = $state('Semua');
 
-  let pageNumber = $derived(parseInt(page.url.searchParams.get('page') || '1'));
+  let currentPage = $derived(parseInt(page.url.searchParams.get('page') || '1'));
+  let pagesCount = $derived(page.data.pagesCount);
 
   onMount(() => {
     const lastSegment = getUrlLastSegment().toLowerCase();
@@ -97,11 +98,11 @@
   {@render children?.()}
   <section class="mt-10 flex justify-center">
     <Pagination
-      currentPage={pageNumber}
-      totalPages={4}
-      onPageChange={(pageNumber: number) => {
+      {currentPage}
+      {pagesCount}
+      onPageChange={(currentPage: number) => {
         const url = new URL(page.url.href);
-        url.searchParams.set('page', pageNumber.toString());
+        url.searchParams.set('page', currentPage.toString());
 
         goto(url);
       }}
