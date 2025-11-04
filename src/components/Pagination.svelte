@@ -64,7 +64,7 @@
 
 {#snippet paginationButton(label: string)}
   <button
-    class="rounded-lg border border-orange-600 px-3.5 py-1.5 text-orange-600 transition-colors duration-300 ease-in-out hover:cursor-pointer hover:bg-orange-600/10"
+    class="rounded-lg border border-orange-600 px-3.5 py-1.5 text-orange-600 transition-colors duration-300 ease-in-out hover:cursor-pointer hover:bg-orange-600/10 hover:text-orange-600"
     class:bg-orange-600={label === currentPage.toString()}
     class:text-white={label === currentPage.toString()}
     onclick={() =>
