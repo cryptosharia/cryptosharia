@@ -44,7 +44,10 @@
     clearTimeout(timer);
 
     // Do search after 1.2 seconds of not typing
-    timer = setTimeout(() => goto(`${window.location.pathname}?search=${keyword}`), 1200);
+    timer = setTimeout(
+      () => goto(`${window.location.pathname}?search=${keyword}`, { noScroll: true }),
+      1200
+    );
   }
 </script>
 
@@ -77,9 +80,9 @@
             selectedCategory = text;
 
             if (text.toUpperCase() === 'SEMUA') {
-              goto('/blog');
+              goto('/blog', { noScroll: true });
             } else {
-              goto(`/blog/${text.toLowerCase()}`);
+              goto(`/blog/${text.toLowerCase()}`, { noScroll: true });
             }
           }}
         />

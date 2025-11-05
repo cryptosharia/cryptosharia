@@ -7,7 +7,7 @@ export const load: PageLoad = async ({ url, fetch }) => {
   try {
     const search = url.searchParams.get('search') || undefined;
     const page = parseInt(url.searchParams.get('page') || '1');
-    const tokensCountPerPage = 6;
+    const tokensCountPerPage = 25;
 
     const tokensCountAsync = getTokensCount(fetch, url.origin, {
       keyword: search
