@@ -3,6 +3,7 @@ import supabase from '../../supabase';
 export const GET = async ({ url }) => {
   try {
     const status = url.searchParams.get('status');
+    const keyword = url.searchParams.get('keyword');
 
     // Use head to prevent token data from being fetched (Only count will be fetched)
     let query = supabase.from('tokens').select('*', { count: 'exact', head: true });
@@ -10,6 +11,11 @@ export const GET = async ({ url }) => {
     // Filter by status
     if (status) {
       query = query.eq('status', status);
+    }
+
+    // Filter by keyword in name or symbol
+    if (keyword) {
+      query = query.or(`name.ilike.%${keyword}%,symbol.ilike.%${keyword}%`);
     }
 
     const { data: _, error, count } = await query;

@@ -9,7 +9,10 @@ export const load: PageLoad = async ({ url, fetch }) => {
     const page = parseInt(url.searchParams.get('page') || '1');
     const tokensCountPerPage = 25;
 
-    const tokensCountAsync = getTokensCount(fetch, url.origin, { status: 'haram' });
+    const tokensCountAsync = getTokensCount(fetch, url.origin, {
+      status: 'haram',
+      keyword: search
+    });
 
     const tokensAsync = getTokens(fetch, url.origin, {
       range: countPaginationRange(page, tokensCountPerPage),
@@ -19,7 +22,7 @@ export const load: PageLoad = async ({ url, fetch }) => {
 
     return {
       tokens: await tokensAsync,
-      pagesCount: Math.ceil((await tokensCountAsync) / tokensCountPerPage)
+      pagesCount: Math.ceil((await tokensCountAsync) / tokensCountPerPage || 1)
     };
   } catch (error: any) {
     console.error(error);

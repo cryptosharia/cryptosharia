@@ -107,12 +107,14 @@ export async function getTokensCount(
   baseUrl: string,
   params: {
     status?: 'halal' | 'haram' | 'syubhat';
+    keyword?: string;
   } = {}
 ) {
   try {
     const url = new URL(baseUrl + '/api/tokens/count');
 
     if (params.status) url.searchParams.set('status', params.status);
+    if (params.keyword) url.searchParams.set('keyword', params.keyword);
 
     const res = await fetch(url);
 

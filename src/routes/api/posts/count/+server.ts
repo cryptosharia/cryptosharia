@@ -3,6 +3,7 @@ import supabase from '../../supabase';
 export const GET = async ({ url }) => {
   try {
     const category = url.searchParams.get('category');
+    const keyword = url.searchParams.get('keyword');
 
     // Use head to prevent post data from being fetched (Only count will be fetched)
     let query = supabase.from('posts').select('*', { count: 'exact', head: true });
@@ -10,6 +11,11 @@ export const GET = async ({ url }) => {
     // Filter by category
     if (category) {
       query = query.eq('category', category);
+    }
+
+    // Filter by keyword in title or description
+    if (keyword) {
+      query = query.or(`title.ilike.%${keyword}%,description.ilike.%${keyword}%`);
     }
 
     const { data: _, error, count } = await query;

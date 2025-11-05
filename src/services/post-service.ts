@@ -68,12 +68,14 @@ export async function getPostsCount(
   baseUrl: string,
   params: {
     category?: 'activity' | 'article';
+    keyword?: string;
   } = {}
 ) {
   try {
     const url = new URL(baseUrl + '/api/posts/count');
 
     if (params.category) url.searchParams.set('category', params.category);
+    if (params.keyword) url.searchParams.set('keyword', params.keyword);
 
     const res = await fetch(url);
 
