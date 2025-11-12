@@ -41,7 +41,7 @@
   <Title class="text-center">CryptoSharia Team</Title>
   <Divider />
   <div
-    class="flex w-full flex-row flex-wrap items-start justify-center gap-x-8 gap-y-8 px-6 pt-5 md:gap-x-24 md:gap-y-12 lg:gap-x-30 xl:gap-x-40"
+    class="mb-9 flex w-full flex-row flex-wrap items-start justify-center gap-x-8 gap-y-8 px-6 pt-5 md:gap-x-24 md:gap-y-12 lg:gap-x-30 xl:gap-x-40"
   >
     {#each people as person}
       <TeamCard name={person.name} bio={person.bio} image={person.image} />

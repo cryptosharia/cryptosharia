@@ -35,9 +35,9 @@
   <About />
   <Collaborations />
   <Team />
+  <Screenings tokens={data.tokens} />
   <Discord />
   <Activities posts={data.activities} />
   <Articles posts={data.articles} />
-  <Screenings tokens={data.tokens} />
   <Faq />
 </main>

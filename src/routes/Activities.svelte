@@ -7,7 +7,7 @@
   let { posts } = $props();
 </script>
 
-<section id="aktivitas" class="nav-space z-10 mb-10 w-full max-w-[90rem] lg:max-xl:max-w-[70rem]">
+<section id="aktivitas" class="z-10 mt-5 mb-2 w-full max-w-[90rem] lg:max-xl:max-w-[70rem]">
   <Title class="text-center">Aktivitas Kami</Title>
   <Divider />
   <div class="flex w-full flex-col items-center gap-y-6 md:gap-y-8 lg:gap-y-10">
