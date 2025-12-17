@@ -1,4 +1,4 @@
-import type { Post } from '../models';
+import type { Post } from '$lib/models';
 
 async function mapRowToModel(post: any, includeContent?: boolean): Promise<Post> {
   let content = '';

@@ -1,6 +1,6 @@
 <script lang="ts">
   import logo1 from '$lib/assets/logo1.png';
-  import PostCard from '../../../components/PostCard.svelte';
+  import PostCard from '$lib/components/PostCard.svelte';
   import type { PageProps } from '../$types';
 
   let { data }: PageProps = $props();

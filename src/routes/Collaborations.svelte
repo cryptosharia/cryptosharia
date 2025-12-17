@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Divider from '../components/Divider.svelte';
+  import Divider from '$lib/components/Divider.svelte';
   import collaborationBG from '$lib/assets/collaborations/collaboration-bg.png';
   import fasset from '$lib/assets/collaborations/fasset-logo.png';
   import halalKulture from '$lib/assets/collaborations/halal-kulture-logo.png';

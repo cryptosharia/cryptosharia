@@ -1,5 +1,5 @@
 <script lang="ts">
-  import GradientDivider from '../components/GradientDivider.svelte';
+  import GradientDivider from '$lib/components/GradientDivider.svelte';
   import discordLogo from '$lib/assets/discord/discord-logo.png';
   import posterMobile from '$lib/assets/discord/poster-mobile.png';
   import poster from '$lib/assets/discord/poster.png';
@@ -10,7 +10,7 @@
   import modules from '$lib/assets/discord/modules.png';
   import cryptoModule from '$lib/assets/discord/crypto-module.png';
   import shariaModule from '$lib/assets/discord/sharia-module.png';
-  import PrimaryButton from '../components/PrimaryButton.svelte';
+  import PrimaryButton from '$lib/components/PrimaryButton.svelte';
 
   import testimonial1 from '$lib/assets/testimonials/testimonial1.png';
   import testimonial2 from '$lib/assets/testimonials/testimonial2.png';

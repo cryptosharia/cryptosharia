@@ -1,8 +1,8 @@
 <script lang="ts">
-  import Divider from '../components/Divider.svelte';
-  import PostCard from '../components/PostCard.svelte';
-  import Title from '../components/Title.svelte';
-  import PrimaryButton from '../components/PrimaryButton.svelte';
+  import Divider from '$lib/components/Divider.svelte';
+  import PostCard from '$lib/components/PostCard.svelte';
+  import Title from '$lib/components/Title.svelte';
+  import PrimaryButton from '$lib/components/PrimaryButton.svelte';
 
   let { posts } = $props();
 </script>

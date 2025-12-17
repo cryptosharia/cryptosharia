@@ -2,8 +2,8 @@
 <script lang="ts">
   import ArrowDown from '$lib/assets/icons/ArrowDown.svelte';
   import ArrowUp from '$lib/assets/icons/ArrowUp.svelte';
-  import Divider from '../components/Divider.svelte';
-  import Title from '../components/Title.svelte';
+  import Divider from '$lib/components/Divider.svelte';
+  import Title from '$lib/components/Title.svelte';
   import { marked } from 'marked';
   import satu from '$lib/faqs/1.md?raw';
   import dua from '$lib/faqs/2.md?raw';

@@ -1,6 +1,6 @@
 import type { PageLoad } from './$types';
-import { getPosts, getPostsCount } from '../../../services/post-service';
-import { countPaginationRange } from '../../../utils';
+import { getPosts, getPostsCount } from '$lib/services/post-service';
+import { countPaginationRange } from '$lib/utils';
 
 export const load: PageLoad = async ({ url, fetch }) => {
   try {

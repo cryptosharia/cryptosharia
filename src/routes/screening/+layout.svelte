@@ -1,11 +1,11 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
   import { onMount } from 'svelte';
-  import Chip from '../../components/Chip.svelte';
-  import Divider from '../../components/Divider.svelte';
-  import { capitalizeFirstLetter, getUrlLastSegment } from '../../utils';
+  import Chip from '$lib/components/Chip.svelte';
+  import Divider from '$lib/components/Divider.svelte';
+  import { capitalizeFirstLetter, getUrlLastSegment } from '$lib/utils';
   import { navigating, page } from '$app/state';
-  import Pagination from '../../components/Pagination.svelte';
+  import Pagination from '$lib/components/Pagination.svelte';
 
   let { children } = $props();
   const categories = ['Semua', 'Halal', 'Haram', 'Syubhat'];

@@ -1,17 +1,17 @@
 <script lang="ts">
-  import GradientDivider from '../components/GradientDivider.svelte';
+  import GradientDivider from '$lib/components/GradientDivider.svelte';
   import kontakBG from '$lib/assets/kontak-bg.png';
   import logo1 from '$lib/assets/logo1.png';
-  import Title from '../components/Title.svelte';
-  import Divider from '../components/Divider.svelte';
-  import InputField from '../components/InputField.svelte';
-  import PrimaryButton from '../components/PrimaryButton.svelte';
+  import Title from '$lib/components/Title.svelte';
+  import Divider from '$lib/components/Divider.svelte';
+  import InputField from '$lib/components/InputField.svelte';
+  import PrimaryButton from '$lib/components/PrimaryButton.svelte';
   import instagram from '$lib/assets/socmed-icons/instagram.png';
   import tiktok from '$lib/assets/socmed-icons/tiktok.png';
   import x from '$lib/assets/socmed-icons/x.png';
   import facebook from '$lib/assets/socmed-icons/facebook.png';
   import youtube from '$lib/assets/socmed-icons/youtube.png';
-  import Modal from '../components/Modal.svelte';
+  import Modal from '$lib/components/Modal.svelte';
 
   const socmeds = [
     {

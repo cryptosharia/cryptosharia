@@ -1,18 +1,18 @@
 <script lang="ts">
   import { marked } from 'marked';
-  import PrimaryButton from '../../../components/PrimaryButton.svelte';
-  import { formatPrice } from '../../../utils';
-  import Divider from '../../../components/Divider.svelte';
-  import DotsDivider from '../../../components/DotsDivider.svelte';
-  import Title from '../../../components/Title.svelte';
-  import type { Token, TokenQuote } from '../../../models';
-  import NotFoundPage from '../../../components/NotFoundPage.svelte';
-  import TokenCard from '../../../components/TokenCard.svelte';
-  import Tag from '../../../components/Tag.svelte';
-  import Modal from '../../../components/Modal.svelte';
+  import PrimaryButton from '$lib/components/PrimaryButton.svelte';
+  import { formatPrice } from '$lib/utils';
+  import Divider from '$lib/components/Divider.svelte';
+  import DotsDivider from '$lib/components/DotsDivider.svelte';
+  import Title from '$lib/components/Title.svelte';
+  import type { Token, TokenQuote } from '$lib/models';
+  import NotFoundPage from '$lib/components/NotFoundPage.svelte';
+  import TokenCard from '$lib/components/TokenCard.svelte';
+  import Tag from '$lib/components/Tag.svelte';
+  import Modal from '$lib/components/Modal.svelte';
 
   import type { PageProps } from './$types';
-  import { getTokenQuotes } from '../../../services/token-service';
+  import { getTokenQuotes } from '$lib/services/token-service';
 
   let { data }: PageProps = $props();
 

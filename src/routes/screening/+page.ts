@@ -1,7 +1,7 @@
 import type { PageLoad } from './$types';
-import { getTokens } from '../../services/token-service';
-import { getTokensCount } from '../../services/token-service';
-import { countPaginationRange } from '../../utils';
+import { getTokens } from '$lib/services/token-service';
+import { getTokensCount } from '$lib/services/token-service';
+import { countPaginationRange } from '$lib/utils';
 
 export const load: PageLoad = async ({ url, fetch }) => {
   try {

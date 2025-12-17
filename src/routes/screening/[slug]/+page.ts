@@ -1,5 +1,5 @@
 import type { PageLoad } from './$types';
-import { getTokens } from '../../../services/token-service';
+import { getTokens } from '$lib/services/token-service';
 
 export const load: PageLoad = async ({ url, fetch, params }) => {
   const [token, tokens] = await Promise.all([

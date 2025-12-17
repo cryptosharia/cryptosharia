@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { formatDate } from '../utils';
+  import { formatDate } from '$lib/utils';
 
   let {
     thumbnailUrl,

@@ -1,7 +1,7 @@
 <script lang="ts">
-  import Divider from '../components/Divider.svelte';
-  import TeamCard from '../components/TeamCard.svelte';
-  import Title from '../components/Title.svelte';
+  import Divider from '$lib/components/Divider.svelte';
+  import TeamCard from '$lib/components/TeamCard.svelte';
+  import Title from '$lib/components/Title.svelte';
   import pembina1 from '$lib/assets/team/pembina1.png';
   import pembina2 from '$lib/assets/team/pembina2.png';
   import pembina3 from '$lib/assets/team/pembina3.png';

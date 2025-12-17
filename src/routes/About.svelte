@@ -3,7 +3,7 @@
   import eth from '$lib/assets/crypto-icons/eth.png';
   import sol from '$lib/assets/crypto-icons/sol.png';
   import sui from '$lib/assets/crypto-icons/sui.png';
-  import Title from '../components/Title.svelte';
+  import Title from '$lib/components/Title.svelte';
 
   const goals = [
     'Menjadi pusat edukasi dan informasi aset crypto sesuai syariah di Indonesia.',

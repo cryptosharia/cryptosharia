@@ -1,15 +1,15 @@
 <script lang="ts">
   import { marked } from 'marked';
-  import PrimaryButton from '../../../components/PrimaryButton.svelte';
-  import { formatDate } from '../../../utils';
+  import PrimaryButton from '$lib/components/PrimaryButton.svelte';
+  import { formatDate } from '$lib/utils';
   import Calendar from '$lib/assets/icons/Calendar.svelte';
-  import Divider from '../../../components/Divider.svelte';
-  import PostCard from '../../../components/PostCard.svelte';
-  import DotsDivider from '../../../components/DotsDivider.svelte';
-  import Title from '../../../components/Title.svelte';
-  import NotFoundPage from '../../../components/NotFoundPage.svelte';
-  import Tag from '../../../components/Tag.svelte';
-  import type { PageProps } from '../$types';
+  import Divider from '$lib/components/Divider.svelte';
+  import PostCard from '$lib/components/PostCard.svelte';
+  import DotsDivider from '$lib/components/DotsDivider.svelte';
+  import Title from '$lib/components/Title.svelte';
+  import NotFoundPage from '$lib/components/NotFoundPage.svelte';
+  import Tag from '$lib/components/Tag.svelte';
+  import type { PageProps } from './$types';
 
   let { data }: PageProps = $props();
 </script>

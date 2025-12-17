@@ -1,7 +1,7 @@
 <script lang="ts">
   import logo1 from '$lib/assets/logo1.png';
   import { page } from '$app/state';
-  import PrimaryButton from '../components/PrimaryButton.svelte';
+  import PrimaryButton from '$lib/components/PrimaryButton.svelte';
 </script>
 
 <svelte:head>

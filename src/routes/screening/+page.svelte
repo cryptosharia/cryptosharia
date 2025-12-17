@@ -1,6 +1,6 @@
 <script lang="ts">
   import logo1 from '$lib/assets/logo1.png';
-  import TokenCard from '../../components/TokenCard.svelte';
+  import TokenCard from '$lib/components/TokenCard.svelte';
   import type { PageProps } from './$types';
 
   let { data }: PageProps = $props();

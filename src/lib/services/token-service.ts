@@ -1,4 +1,4 @@
-import type { Token, TokenQuote } from '../models';
+import type { Token, TokenQuote } from '$lib/models';
 
 export async function getTokens(
   fetch: any,
