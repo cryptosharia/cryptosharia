@@ -54,19 +54,21 @@
     isSendingEmailSuccess = false;
 
     const name = (document.querySelector('#contact-form #name') as HTMLInputElement).value;
-    const sender = (document.querySelector('#contact-form #email') as HTMLInputElement).value;
+    const email = (document.querySelector('#contact-form #email') as HTMLInputElement).value;
     const message = (document.querySelector('#contact-form #message') as HTMLTextAreaElement).value;
 
     try {
       const res = await fetch('/api/email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ sender, name, message })
+        body: JSON.stringify({ name, email, message })
       });
 
-      if (!res.ok) {
-        throw new Error('Failed to send email');
-      }
+      if (!res.ok) throw new Error('Failed to send email');
+
+      const data = await res.json();
+
+      if (!data.success) throw new Error(data.message);
 
       isSendingEmailSuccess = true;
     } catch (error) {

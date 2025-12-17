@@ -1,7 +1,7 @@
-import { EMAIL, GS_CONTACT_FORM_ENDPOINT } from '$env/static/private';
+import { GS_CONTACT_FORM_ENDPOINT } from '$env/static/private';
 
 export const POST = async ({ request }) => {
-  const { sender, name, message } = await request.json();
+  const { name, email, message } = await request.json();
 
   try {
     const res = await fetch(GS_CONTACT_FORM_ENDPOINT, {
@@ -10,21 +10,28 @@ export const POST = async ({ request }) => {
       headers: {
         'Content-Type': 'text/plain;charset=utf-8' // to solve CORS issue
       },
-      body: JSON.stringify({ recipient: EMAIL, sender, name, message })
+      body: JSON.stringify({ name, email, message })
     });
 
     if (!res.ok) {
       throw new Error(`Sending email failed: ${res.statusText}`);
     }
 
-    return new Response(JSON.stringify({ error: false, message: 'Email sent successfully' }), {
-      status: 200,
-      headers: { 'Content-Type': 'application/json' }
-    });
+    const data = await res.json();
+
+    return new Response(
+      JSON.stringify({ success: data.success, message: data.message, data: data.data }),
+      {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' }
+      }
+    );
   } catch (error: any) {
     console.error(error);
 
-    return new Response(JSON.stringify({ error: true, message: error.toString() }), {
+    const message = error instanceof Error ? error.message : error.toString();
+
+    return new Response(JSON.stringify({ success: false, message, data: null }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' }
     });
