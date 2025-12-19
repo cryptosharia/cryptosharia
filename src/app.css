@@ -6,7 +6,7 @@
 @custom-variant hover (&:hover);
 
 @theme {
-  --font-inter: 'Intera', sans-serif;
+  --font-inter: 'Inter', sans-serif;
   --font-jua: 'Jua', sans-serif;
 
   --animate-collaboration-brand: infinite-scroll 12s linear infinite;
