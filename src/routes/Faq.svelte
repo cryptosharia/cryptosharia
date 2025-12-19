@@ -5,11 +5,11 @@
   import Divider from '$lib/components/Divider.svelte';
   import Title from '$lib/components/Title.svelte';
   import { marked } from 'marked';
-  import satu from '$lib/faqs/1.md?raw';
-  import dua from '$lib/faqs/2.md?raw';
-  import tiga from '$lib/faqs/3.md?raw';
-  import empat from '$lib/faqs/4.md?raw';
-  import lima from '$lib/faqs/5.md?raw';
+  import satu from '$lib/assets/faqs/1.md?raw';
+  import dua from '$lib/assets/faqs/2.md?raw';
+  import tiga from '$lib/assets/faqs/3.md?raw';
+  import empat from '$lib/assets/faqs/4.md?raw';
+  import lima from '$lib/assets/faqs/5.md?raw';
 
   function toggleAccordion(i: number) {
     const container = document.getElementById(`faq-${i}`);
