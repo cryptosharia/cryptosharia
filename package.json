@@ -48,6 +48,7 @@
 		"vite": "^7.2.6"
 	},
 	"dependencies": {
+		"fluid-tailwindcss": "^1.0.5",
 		"postgres": "^3.4.7"
 	}
 }
