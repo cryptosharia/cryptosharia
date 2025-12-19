@@ -1,9 +1,9 @@
-import type { PageLoad } from './$types';
+import type { PageServerLoad } from './$types';
 import { getTokens } from '$lib/services/token-service';
 import { getTokensCount } from '$lib/services/token-service';
 import { countPaginationRange } from '$lib/utils';
 
-export const load: PageLoad = async ({ url, fetch }) => {
+export const load: PageServerLoad = async ({ url, fetch }) => {
   try {
     const search = url.searchParams.get('search') || undefined;
     const page = parseInt(url.searchParams.get('page') || '1');

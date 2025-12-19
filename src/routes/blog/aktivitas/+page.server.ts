@@ -1,18 +1,20 @@
-import type { PageLoad } from './$types';
+import type { PageServerLoad } from './$types';
 import { getPosts, getPostsCount } from '$lib/services/post-service';
 import { countPaginationRange } from '$lib/utils';
 
-export const load: PageLoad = async ({ url, fetch }) => {
+export const load: PageServerLoad = async ({ url, fetch }) => {
   try {
     const search = url.searchParams.get('search') || undefined;
     const page = parseInt(url.searchParams.get('page') || '1');
     const postsCountPerPage = 12;
 
     const postsCountAsync = getPostsCount(fetch, url.origin, {
+      category: 'activity',
       keyword: search
     });
 
     const postsAsync = getPosts(fetch, url.origin, {
+      category: 'activity',
       range: countPaginationRange(page, postsCountPerPage),
       keyword: search
     });
