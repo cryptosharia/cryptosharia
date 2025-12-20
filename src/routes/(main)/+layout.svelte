@@ -1,8 +1,8 @@
 <script lang="ts">
-	// import Navbar from './Navbar.svelte';
+	import Navbar from './Navbar.svelte';
 
 	let { children } = $props();
 </script>
 
-<!-- <Navbar /> -->
+<Navbar />
 {@render children()}
