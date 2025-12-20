@@ -62,7 +62,8 @@
 			href={link.href}
 			onclick={closeDrawer}
 			class={cn(
-				'h-fit p-0 font-semibold text-primary-foreground/70 transition-all hover:text-primary hover:no-underline active:scale-90',
+				'h-fit p-0 font-semibold transition-all hover:text-primary hover:no-underline active:scale-90',
+				'text-muted-foreground md:text-primary-foreground/65',
 				isActive && 'text-primary',
 				isMobile ? 'w-full text-center text-base' : 'fl-text-sm/base'
 			)}
