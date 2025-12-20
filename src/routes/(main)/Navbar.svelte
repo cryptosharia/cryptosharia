@@ -141,7 +141,8 @@
 	<div
 		bind:clientHeight={drawerHeight}
 		class={cn(
-			'absolute top-0 left-0 -z-10 w-full rounded-b-3xl border-b border-border bg-background px-4 pt-16 pb-2 shadow-xl transition-transform duration-500 md:hidden'
+			'absolute top-0 left-0 -z-10 w-full rounded-b-3xl border-b border-border bg-background px-4 pt-16 pb-2 shadow-xl transition-all duration-500 md:hidden',
+			!isDrawerOpen && 'invisible opacity-0'
 		)}
 		style:transform={isDrawerOpen ? 'translateY(0)' : `translateY(-${drawerHeight + 100}px)`}
 	>
