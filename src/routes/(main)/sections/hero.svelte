@@ -12,7 +12,7 @@
 		<div class="flex max-w-7xl flex-col items-center gap-y-5 px-2">
 			<img src={logo2} alt="CryptoSharia Logo" class="fl-w-48/64" />
 			<div class="flex flex-col items-center text-center text-background text-shadow-lg">
-				<h1 class="fl-text-3xl/5xl font-semibold">CryptoSharia</h1>
+				<h1 class="font-serif fl-text-3xl/5xl font-semibold">CryptoSharia</h1>
 				<p class="fl-text-base/xl">Platform Edukasi dan Informasi Aset Kripto Syariah</p>
 			</div>
 		</div>
