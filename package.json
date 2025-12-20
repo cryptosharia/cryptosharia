@@ -49,6 +49,7 @@
 	},
 	"dependencies": {
 		"fluid-tailwindcss": "^1.0.5",
-		"postgres": "^3.4.7"
+		"postgres": "^3.4.7",
+		"svelte-themes": "^2.0.10"
 	}
 }

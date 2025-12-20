@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { SvelteTheme } from 'svelte-themes';
 	import './layout.css';
 
 	let { children } = $props();
@@ -13,4 +14,7 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 	<link rel="manifest" href="/site.webmanifest" />
 </svelte:head>
-{@render children()}
+
+<SvelteTheme enableSystem defaultTheme="system" attribute="class">
+	{@render children()}
+</SvelteTheme>
