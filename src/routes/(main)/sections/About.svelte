@@ -63,7 +63,9 @@
 
 <section class="flex flex-col items-stretch justify-between md:flex-row">
 	<div class="flex-1 rounded-4xl border border-border bg-card p-8 shadow-lg">
-		<Title size="sm">Tentang <u><i>CryptoSharia</i></u></Title>
+		<Title size="sm" useSeparator={false} class="text-left"
+			>Tentang <u><i>CryptoSharia</i></u></Title
+		>
 		<p class="text-justify">
 			<i><b>Crypto Sharia</b></i> adalah komunitas pionir yang menghubungkan dunia crypto dengan prinsip
 			syariah, menghadirkan ekosistem edukasi, riset, dan komunitas terpercaya bagi teman-teman muslim
@@ -81,7 +83,7 @@
 		{@render line('mobile')}
 		<div>
 			<div>
-				<Title size="sm">Community Goals</Title>
+				<Title size="sm" useSeparator={false} class="text-left">Community Goals</Title>
 				<ul>
 					{#each goals as goal}
 						<li class="relative mb-2">
