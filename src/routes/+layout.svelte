@@ -18,7 +18,7 @@
 
 <SvelteTheme enableSystem defaultTheme="system" attribute="class">
 	<!-- Replace browser default scrollbar with custom scrollbar -->
-	<ScrollArea class="h-screen" scrollbarYClasses="z-999">
+	<ScrollArea class="h-screen" scrollbarYClasses="z-999" type="auto">
 		{@render children()}
 	</ScrollArea>
 </SvelteTheme>
