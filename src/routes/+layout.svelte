@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { SvelteTheme } from 'svelte-themes';
 	import './layout.css';
+	import { ScrollArea } from '$lib/components/ui/scroll-area';
 
 	let { children } = $props();
 </script>
@@ -16,5 +17,8 @@
 </svelte:head>
 
 <SvelteTheme enableSystem defaultTheme="system" attribute="class">
-	{@render children()}
+	<!-- Replace browser default scrollbar with custom scrollbar -->
+	<ScrollArea class="h-screen" scrollbarYClasses="z-999">
+		{@render children()}
+	</ScrollArea>
 </SvelteTheme>
