@@ -11,19 +11,14 @@
 	let { size = 'md', useSeparator = true, class: className, children, ...rest }: Props = $props();
 </script>
 
-<div data-slot="title" class="w-full">
+<div data-slot="title" class={cn('w-full text-center font-bold text-primary', className)}>
 	<h2
-		class={cn(
-			'mb-1.5 text-center font-bold text-primary',
-			size === 'sm' && 'fl-text-2xl/3xl',
-			size === 'md' && 'fl-text-3xl/4xl',
-			className
-		)}
+		class={cn('mb-1.5', size === 'sm' && 'fl-text-2xl/3xl', size === 'md' && 'fl-text-3xl/4xl')}
 		{...rest}
 	>
 		{@render children?.()}
 	</h2>
 	{#if useSeparator}
-		<Separator />
+		<Separator class="mb-6" />
 	{/if}
 </div>
