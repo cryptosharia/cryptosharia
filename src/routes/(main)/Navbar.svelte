@@ -63,7 +63,7 @@
 			onclick={closeDrawer}
 			class={cn(
 				'h-fit p-0 font-semibold transition-all hover:text-primary hover:no-underline active:scale-90',
-				'text-muted-foreground md:text-primary-foreground/65',
+				'text-muted-foreground',
 				isActive && 'text-primary',
 				isMobile ? 'w-full text-center text-base' : 'fl-text-sm/base'
 			)}
