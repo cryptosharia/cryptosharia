@@ -1,49 +1,9 @@
-<!-- <script lang="ts">
-	import btc from '$lib/assets/icons/btc.png';
-	import eth from '$lib/assets/icons/eth.png';
-	import sol from '$lib/assets/icons/sol.png';
-	import sui from '$lib/assets/icons/sui.png';
-	import { Card, CardHeader, CardContent, CardFooter } from '$lib/components/ui/card';
-</script>
-
-<section id="about" class="flex flex-row items-stretch justify-between">
-	<Card class="flex-1 p-6">
-		<CardContent>
-			<h2 class="mb-2 text-3xl font-semibold text-primary">
-				Tentang <span class="italic underline">CryptoSharia</span>
-			</h2>
-			<p>
-				Crypto Sharia adalah komunitas pionir yang menghubungkan dunia crypto dengan prinsip
-				syariah, menghadirkan ekosistem edukasi, riset, dan komunitas terpercaya bagi teman-teman
-				muslim yang tertarik untuk berinvestasi aset digital crypto tapi masih sesuai dengan
-				prinsip-prinsip syariah.
-			</p>
-		</CardContent>
-		<CardFooter class="flex h-7 w-full items-center justify-around">
-			<img src={btc} alt="" class="h-full" />
-			<img src={eth} alt="" class="h-full" />
-			<img src={sol} alt="" class="h-full" />
-			<img src={sui} alt="" class="h-full" />
-		</CardFooter>
-	</Card>
-	<span class="mx-10 block w-0.5 bg-primary/50"></span>
-	<div class="flex-1">
-		<h2 class="text-3xl font-semibold text-primary">Community Goals</h2>
-		<ul>
-			<li>Menjadi pusat edukasi dan informasi aset crypto sesuai syariah di Indonesia.</li>
-			<li>
-				Menjadi wadah kolaborasi aktif dan produktif bagi para pelaku industri Web3 di Indonesia.
-			</li>
-			<li>Mendukung tranformasi ekonomi digital di Indonesia melalui prinsip keuangan syariah.</li>
-		</ul>
-	</div>
-</section> -->
-
 <script lang="ts">
 	import btc from '$lib/assets/icons/btc.png';
 	import eth from '$lib/assets/icons/eth.png';
 	import sol from '$lib/assets/icons/sol.png';
 	import sui from '$lib/assets/icons/sui.png';
+	import PageSection from '$lib/components/PageSection.svelte';
 	import Title from '$lib/components/Title.svelte';
 
 	const goals = [
@@ -61,7 +21,7 @@
 	{/if}
 {/snippet}
 
-<section class="flex flex-col items-stretch justify-between md:flex-row">
+<PageSection class="flex flex-col items-stretch justify-between md:flex-row">
 	<div class="flex-1 rounded-4xl border border-border bg-card p-8 shadow-lg">
 		<Title size="sm" useSeparator={false} class="text-left"
 			>Tentang <u><i>CryptoSharia</i></u></Title
@@ -97,4 +57,4 @@
 			</div>
 		</div>
 	</div>
-</section>
+</PageSection>

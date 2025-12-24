@@ -2,10 +2,13 @@
 	import Hero from './sections/Hero.svelte';
 	import About from './sections/About.svelte';
 	import Team from './sections/Team.svelte';
+	import Discord from './sections/Discord.svelte';
 </script>
 
 <Hero />
-<div class="mx-auto mt-10 max-w-7xl space-y-20 fl-px-2.5/5">
+<div class="my-10 space-y-20">
 	<About />
 	<Team />
 </div>
+
+<Discord />

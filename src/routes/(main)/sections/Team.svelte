@@ -5,6 +5,7 @@
 	import pembina3 from '$lib/assets/team/pembina3.png';
 	import pembina4 from '$lib/assets/team/pembina4.png';
 	import pembina5 from '$lib/assets/team/pembina5.png';
+	import PageSection from '$lib/components/PageSection.svelte';
 
 	const people = [
 		{
@@ -47,12 +48,12 @@
 	</div>
 {/snippet}
 
-<section id="team" class="flex flex-col items-center">
+<PageSection id="team" class="flex flex-col items-center">
 	<Title>CryptoSharia Team</Title>
 
-	<div class="mb-9 flex w-full flex-row flex-wrap items-start justify-center fl-gap-x-8/40 gap-y-8">
+	<div class="flex w-full flex-row flex-wrap items-start justify-center fl-gap-x-8/40 gap-y-8">
 		{#each people as person}
 			{@render personCard(person.image, person.name, person.bio)}
 		{/each}
 	</div>
-</section>
+</PageSection>
