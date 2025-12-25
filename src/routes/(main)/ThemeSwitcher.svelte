@@ -30,7 +30,10 @@
 	variant="default"
 	size="icon-lg"
 	onclick={handleClick}
-	class={cn('border-2 border-primary hover:bg-transparent hover:text-primary', className)}
+	class={cn(
+		'fixed bottom-3 left-3 border-2 border-primary hover:bg-transparent hover:text-primary',
+		className
+	)}
 >
 	{#if theme.theme === 'dark'}
 		<MoonIcon />

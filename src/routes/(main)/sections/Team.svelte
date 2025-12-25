@@ -41,7 +41,7 @@
 		<img
 			src={image}
 			alt={name}
-			class="mb-2 h-62 w-full rounded-2xl object-cover transition-transform hover:scale-107"
+			class="mb-2 h-62 w-full rounded-2xl object-cover transition-transform hover:scale-105"
 		/>
 		<h2 class="text-xl font-semibold text-primary">{name}</h2>
 		<p class="text-sm text-muted-foreground">{bio}</p>
