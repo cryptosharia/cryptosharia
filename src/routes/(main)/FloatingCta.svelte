@@ -1,18 +1,17 @@
 <script lang="ts">
-	import discord from '$lib/assets/icons/discord.svg?raw';
-	import whatsapp from '$lib/assets/icons/whatsapp.svg?raw';
+	import { WhatsAppIcon, DiscordIcon } from '$lib/components/icons';
 	import { cn } from '$lib/utils';
 
 	const links = [
 		{
 			name: 'Discord',
-			icon: discord,
+			Icon: DiscordIcon,
 			color: '#5865F2',
 			url: 'https://discord.gg/b9cmHfcZpA'
 		},
 		{
 			name: 'WhatsApp',
-			icon: whatsapp,
+			Icon: WhatsAppIcon,
 			color: '#25D366',
 			url: 'https://chat.whatsapp.com/KXx0GnVBfbACIcOKjmdSdW'
 		}
@@ -47,7 +46,7 @@
 				class="fl-size-10/12 text-(--color) transition-transform hover:scale-110"
 			>
 				<a href={link.url} target="_blank">
-					{@html link.icon}
+					<link.Icon />
 				</a>
 			</span>
 		{/each}
