@@ -2,9 +2,20 @@
 	import type { HTMLAttributes } from 'svelte/elements';
 	import { cn } from '$lib/utils';
 
-	let { children, class: className, ...rest }: HTMLAttributes<HTMLElement> = $props();
+	let {
+		maxWidth = '7xl',
+		children,
+		class: className,
+		...rest
+	}: HTMLAttributes<HTMLElement> & {
+		maxWidth?: '7xl' | '6xl' | '5xl';
+	} = $props();
 </script>
 
-<section class={cn('mx-auto max-w-7xl fl-px-2.5/5', className)} {...rest}>
+<section
+	style:--max-w="var(--container-{maxWidth})"
+	class={cn('mx-auto max-w-(--max-w) fl-px-2.5/5', className)}
+	{...rest}
+>
 	{@render children?.()}
 </section>
