@@ -1,7 +1,8 @@
 <script lang="ts">
+	import { useTheme } from 'svelte-themes';
 	let { reversed = false }: { reversed?: boolean } = $props();
 
-	const colors = [
+	const baseColors = [
 		'bg-orange-100',
 		'bg-orange-200',
 		'bg-orange-300',
@@ -13,7 +14,17 @@
 		'bg-orange-900'
 	];
 
-	const colorsReversed = [...colors].reverse();
+	const theme = useTheme();
+
+	let colors = $derived.by(() => {
+		if (theme.resolvedTheme === 'dark') {
+			return [...baseColors].reverse();
+		} else {
+			return baseColors;
+		}
+	});
+
+	let reversedColors = $derived([...colors].reverse());
 </script>
 
 {#snippet line(color: string)}
@@ -21,7 +32,7 @@
 {/snippet}
 
 <span class="flex flex-col gap-y-1">
-	{#each reversed ? colorsReversed : colors as color}
+	{#each reversed ? reversedColors : colors as color}
 		{@render line(color)}
 	{/each}
 </span>
