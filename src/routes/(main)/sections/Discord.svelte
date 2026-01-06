@@ -1,5 +1,8 @@
 <script lang="ts">
 	import GradientDivider from '$lib/components/GradientDivider.svelte';
+	import DarkOverlay from '$lib/components/DarkOverlay.svelte';
+	import PageSection from '$lib/components/PageSection.svelte';
+	import Title from '$lib/components/Title.svelte';
 	import {
 		background,
 		cryptoModule,
@@ -7,14 +10,14 @@
 		halalCoinCallsMobile,
 		informationUpdateDesktop,
 		informationUpdateMobile,
-		modules,
 		posterDesktop,
 		posterMobile,
 		shariaModule
 	} from '$lib/assets/discord';
-	import DarkOverlay from '$lib/components/DarkOverlay.svelte';
-	import PageSection from '$lib/components/PageSection.svelte';
-	import Title from '$lib/components/Title.svelte';
+	import * as t from '$lib/assets/discord/testimonials';
+	import InfiniteScroll from '$lib/components/InfiniteScroll.svelte';
+
+	const testimonials = Object.values(t);
 </script>
 
 {#snippet sectionTitle(text: string)}
@@ -30,8 +33,8 @@
 		style:--bg-image="url({background})"
 		class="w-full bg-(image:--bg-image) bg-cover bg-fixed bg-center bg-no-repeat"
 	>
-		<DarkOverlay>
-			<PageSection maxWidth="6xl" class="py-10">
+		<DarkOverlay class="py-10">
+			<PageSection maxWidth="6xl">
 				<div class="flex flex-col gap-10 md:gap-20">
 					<!-- Poster Section -->
 					<div class="order-1 md:order-1">
@@ -101,6 +104,20 @@
 					</div>
 				</div>
 			</PageSection>
+			<!-- Testimonials Section -->
+			<div class="order-5 mt-10 flex flex-col gap-4 md:order-5 md:mt-20">
+				{@render sectionTitle('Testimoni')}
+
+				<InfiniteScroll gap="gap-8">
+					{#each testimonials as testimonial, i}
+						<img
+							src={testimonial}
+							alt="Testimonial {i + 1}"
+							class="h-auto fl-w-[24rem/32rem] shrink-0 rounded-2xl border-2 border-primary-foreground shadow-lg"
+						/>
+					{/each}
+				</InfiniteScroll>
+			</div>
 		</DarkOverlay>
 	</div>
 	<GradientDivider reversed />
