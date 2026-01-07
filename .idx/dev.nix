@@ -5,6 +5,7 @@
     # pkgs.nodejs_22
   ];
   idx.extensions = [
+    "google.gemini-cli-vscode-ide-companion"
     "svelte.svelte-vscode"
     "manuth.eslint-language-service"
     "esbenp.prettier-vscode"
