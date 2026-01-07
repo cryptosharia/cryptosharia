@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { WhatsAppIcon, DiscordIcon } from '$lib/components/icons';
-	import { cn } from '$lib/utils';
+	import { cn, getPageHeight, getViewportHeight } from '$lib/utils';
 
 	const links = [
 		{
@@ -17,10 +17,27 @@
 		}
 	];
 
-	let { isShown } = $props<{ isShown: boolean }>();
-
 	let width = $state(0);
+
+	// Current scroll position
+	let scrollPosition = $state(0);
+
+	// Scroll status whether at the top, at the bottom, or in the middle
+	let scrollStatus: 'bottom' | 'top' | 'middle' = $derived.by(() => {
+		if (scrollPosition <= 0) {
+			return 'top';
+		} else if (scrollPosition >= getPageHeight() - getViewportHeight()) {
+			return 'bottom';
+		} else {
+			return 'middle';
+		}
+	});
+
+	// Whether the floating CTA should be shown or not
+	let isShown = $derived(scrollStatus === 'middle');
 </script>
+
+<svelte:window bind:scrollY={scrollPosition} />
 
 <div
 	bind:offsetWidth={width}
