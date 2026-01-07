@@ -41,10 +41,10 @@
 
 	<!-- Gradient overlays for fade effect -->
 	<div
-		class="pointer-events-none absolute top-0 left-0 z-10 h-full w-20 bg-linear-to-r from-background to-transparent"
+		class="pointer-events-none absolute top-0 left-0 z-10 h-full w-20 bg-linear-to-r from-black to-transparent"
 	></div>
 	<div
-		class="pointer-events-none absolute top-0 right-0 z-10 h-full w-20 bg-linear-to-l from-background to-transparent"
+		class="pointer-events-none absolute top-0 right-0 z-10 h-full w-20 bg-linear-to-l from-black to-transparent"
 	></div>
 
 	<!-- Scrolling content -->

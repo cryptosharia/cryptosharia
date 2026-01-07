@@ -13,8 +13,15 @@
 </script>
 
 <section
-	style:--max-w="var(--container-{maxWidth})"
-	class={cn('mx-auto max-w-(--max-w) fl-px-2.5/5', className)}
+	class={cn(
+		'mx-auto fl-px-2.5/5',
+		{
+			'max-w-7xl': maxWidth === '7xl',
+			'max-w-6xl': maxWidth === '6xl',
+			'max-w-5xl': maxWidth === '5xl'
+		},
+		className
+	)}
 	{...rest}
 >
 	{@render children?.()}
