@@ -21,7 +21,7 @@
 </script>
 
 {#snippet sectionTitle(text: string)}
-	<h3 class="text-center fl-text-xl/3xl mb-2 font-bold text-primary-foreground italic">
+	<h3 class="mb-2 text-center fl-text-xl/3xl font-bold text-primary-foreground italic">
 		{text}
 	</h3>
 {/snippet}
@@ -108,7 +108,7 @@
 			<div class="order-5 mt-10 md:order-5 md:mt-20">
 				{@render sectionTitle('Testimoni')}
 
-				<InfiniteScroll gap="gap-8">
+				<InfiniteScroll speed="normal" class="gap-4">
 					{#each testimonials as testimonial, i}
 						<img
 							src={testimonial}
