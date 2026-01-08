@@ -49,10 +49,7 @@
 		<Button
 			href={link.href}
 			onclick={closeDrawer}
-			class={cn(
-				'rounded-full border-2 border-primary font-bold hover:bg-transparent hover:text-primary active:scale-90',
-				isMobile ? 'w-full text-base' : 'fl-text-sm/base'
-			)}
+			class={cn('rounded-full font-bold', isMobile ? 'w-full text-base' : 'fl-text-sm/base')}
 		>
 			{link.text}
 		</Button>
@@ -62,7 +59,7 @@
 			href={link.href}
 			onclick={closeDrawer}
 			class={cn(
-				'h-fit p-0 font-semibold transition-all hover:text-primary hover:no-underline active:scale-90',
+				'h-fit p-0 font-semibold transition-all hover:text-primary hover:no-underline',
 				'text-muted-foreground',
 				isActive && 'text-primary',
 				isMobile ? 'w-full text-center text-base' : 'fl-text-sm/base'

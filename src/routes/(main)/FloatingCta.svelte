@@ -6,13 +6,11 @@
 		{
 			name: 'Discord',
 			Icon: DiscordIcon,
-			color: '#5865F2',
 			url: 'https://discord.gg/b9cmHfcZpA'
 		},
 		{
 			name: 'WhatsApp',
 			Icon: WhatsAppIcon,
-			color: '#25D366',
 			url: 'https://chat.whatsapp.com/KXx0GnVBfbACIcOKjmdSdW'
 		}
 	];
@@ -58,10 +56,7 @@
 	</div>
 	<div class="flex flex-row justify-around">
 		{#each links as link}
-			<span
-				style:--color={link.color}
-				class="fl-size-10/12 text-(--color) transition-transform hover:scale-110"
-			>
+			<span class="fl-size-10/12 transition-transform hover:scale-110">
 				<a href={link.url} target="_blank">
 					<link.Icon />
 				</a>

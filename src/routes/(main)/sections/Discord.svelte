@@ -16,6 +16,8 @@
 	} from '$lib/assets/discord';
 	import * as t from '$lib/assets/discord/testimonials';
 	import InfiniteScroll from '$lib/components/InfiniteScroll.svelte';
+	import { Button } from '$lib/components/ui/button';
+	import { DiscordIcon } from '$lib/components/icons';
 
 	const testimonials = Object.values(t);
 </script>
@@ -33,15 +35,15 @@
 		style:--bg-image="url({background})"
 		class="w-full bg-(image:--bg-image) bg-cover bg-fixed bg-center bg-no-repeat"
 	>
-		<DarkOverlay class="py-10">
+		<DarkOverlay class="pb-15 pt-5">
 			<PageSection maxWidth="6xl">
-				<div class="flex flex-col gap-10 md:gap-20">
+				<div class="flex flex-col gap-20">
 					<!-- Poster Section -->
 					<div class="order-1 md:order-1">
 						<Title
 							size="lg"
 							useSeparator={false}
-							class="font-serif [-webkit-text-stroke:0.08rem_#fff]"
+							class="font-serif [-webkit-text-stroke:0.08rem_#fff] max-md:hidden"
 						>
 							JOIN <span class="text-[#5865f2]">Discord Premium</span> CryptoSharia
 						</Title>
@@ -60,7 +62,7 @@
 					<!-- Modules Section (Crypto & Sharia) -->
 					<!-- Mobile: Crypto Top, Sharia Bottom (via flex-col-reverse on DOM [Sharia, Crypto]) -->
 					<!-- Desktop: Sharia Left, Crypto Right -->
-					<div class="order-2 flex flex-col-reverse gap-8 md:order-4 md:flex-row md:gap-10">
+					<div class="order-2 flex flex-col-reverse gap-y-20 md:order-4 md:flex-row gap-x-4">
 						<!-- Sharia Module -->
 						<div class="flex-1">
 							{@render sectionTitle('Modul Syariah')}
@@ -104,8 +106,9 @@
 					</div>
 				</div>
 			</PageSection>
+
 			<!-- Testimonials Section -->
-			<div class="order-5 mt-10 md:order-5 md:mt-20">
+			<div class="order-5 my-20 md:order-5">
 				{@render sectionTitle('Testimoni')}
 
 				<InfiniteScroll speed="normal" class="gap-4">
@@ -118,6 +121,30 @@
 					{/each}
 				</InfiniteScroll>
 			</div>
+
+			<!-- CTA Section -->
+			<PageSection maxWidth="6xl" class="flex flex-col items-center gap-8">
+				<p class="text-center font-serif fl-text-2xl/3xl text-primary-foreground italic">
+					❝Kapan lagi ada komunitas crypto yang bukan cuma ngajarin cuan, tapi juga taat syariat,
+					serta melek teknologi masa depan?❞
+				</p>
+				<div class="flex items-center justify-center">
+					<!-- Use "flex order" to solve peer issue -->
+					<Button
+						variant="default"
+						href="https://berbagi.link/cryptosharia"
+						size="lg"
+						class="peer order-2 border-white fl-text-base/xl font-bold hover:border-primary"
+						>{'< Join Sekarang >'}</Button
+					>
+					<DiscordIcon
+						class="transition-color order-1 size-10 translate-x-2 -rotate-90 text-white peer-hover:text-primary"
+					/>
+					<DiscordIcon
+						class="transition-color order-3 size-10 -translate-x-2 rotate-90 text-white peer-hover:text-primary"
+					/>
+				</div>
+			</PageSection>
 		</DarkOverlay>
 	</div>
 	<GradientDivider reversed />
