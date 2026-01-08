@@ -31,7 +31,7 @@
 	size="icon-lg"
 	onclick={handleClick}
 	class={cn(
-		'fixed bottom-3 left-3 border-2 border-primary hover:bg-transparent hover:text-primary',
+		'fixed bottom-3 left-3 z-50 border-2 border-primary hover:bg-transparent hover:text-primary',
 		className
 	)}
 >

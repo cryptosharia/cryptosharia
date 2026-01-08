@@ -120,7 +120,7 @@ This Svelte component creates a seamless, infinite scrolling effect for any cont
 	});
 </script>
 
-<div class="relative w-full overflow-hidden">
+<div class="relative size-full overflow-hidden">
 	<!-- Gradient overlays create a fade effect on the edges, enhancing the infinite illusion. -->
 	<div
 		class="pointer-events-none absolute top-0 left-0 z-10 h-full w-20 bg-linear-to-r from-black to-transparent"

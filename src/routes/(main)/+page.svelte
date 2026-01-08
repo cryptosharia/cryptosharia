@@ -3,12 +3,13 @@
 	import About from './sections/About.svelte';
 	import Team from './sections/Team.svelte';
 	import Discord from './sections/Discord.svelte';
+	import Partners from './sections/Partners.svelte';
 </script>
 
 <Hero />
 <div class="my-10 space-y-20">
 	<About />
+	<Partners />
 	<Team />
+	<Discord />
 </div>
-
-<Discord />
