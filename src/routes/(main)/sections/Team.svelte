@@ -1,10 +1,6 @@
 <script lang="ts">
 	import Title from '$lib/components/Title.svelte';
-	import pembina1 from '$lib/assets/team/pembina1.png';
-	import pembina2 from '$lib/assets/team/pembina2.png';
-	import pembina3 from '$lib/assets/team/pembina3.png';
-	import pembina4 from '$lib/assets/team/pembina4.png';
-	import pembina5 from '$lib/assets/team/pembina5.png';
+	import { pembina1, pembina2, pembina3, pembina4, pembina5 } from '$lib/assets/team';
 	import PageSection from '$lib/components/PageSection.svelte';
 
 	const people = [

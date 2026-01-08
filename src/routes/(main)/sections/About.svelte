@@ -1,8 +1,5 @@
 <script lang="ts">
-	import btc from '$lib/assets/icons/btc.png';
-	import eth from '$lib/assets/icons/eth.png';
-	import sol from '$lib/assets/icons/sol.png';
-	import sui from '$lib/assets/icons/sui.png';
+	import { btc, eth, sol, sui } from '$lib/assets/icons';
 	import PageSection from '$lib/components/PageSection.svelte';
 	import Title from '$lib/components/Title.svelte';
 
