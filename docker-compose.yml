@@ -1,0 +1,18 @@
+services: # Defines the list of separate services (containers) we want to run
+  dev: # We've named this 'dev' because it's strictly for your local development server
+    image: node:24-alpine # Use the latest Active LTS (Node 24) on the tiny Alpine Linux OS
+    working_dir: /app # Set the default "home folder" inside the container where commands will run
+    ports: # Maps ports from your actual computer to ports inside the container
+      - '5173:5173' # [Computer Port 5173] : [Container Port 5173]
+    volumes: # Syncs files between your computer and the container
+      - .:/app # Mount current directory (.) to /app in container (reflects code changes instantly)
+      # Anonymous Volume: Overrides /app/node_modules in the container so it
+      # doesn't use your local machine's node_modules. This keeps Linux-specific packages safe.
+      - /app/node_modules
+    # command: The script that runs every time the container starts up
+    # sh -c: Starts a shell to understand the "&&" logic
+    # npm install: Ensures packages are ready
+    # npm run dev -- --host: Starts the SvelteKit dev server and makes it visible outside the container
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0 --port 5173"
+    environment: # Sets system-wide variables inside the container
+      - NODE_ENV=development # Explicitly tells Node and libraries that we are in development mode
