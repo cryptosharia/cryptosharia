@@ -48,7 +48,7 @@
 	<Title>CryptoSharia Team</Title>
 
 	<div class="flex w-full flex-row flex-wrap items-start justify-center fl-gap-x-8/40 gap-y-8">
-		{#each people as person}
+		{#each people as person (person.name)}
 			{@render personCard(person.image, person.name, person.bio)}
 		{/each}
 	</div>

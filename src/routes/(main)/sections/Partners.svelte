@@ -40,7 +40,7 @@
 	<div class="h-48 w-full bg-cover bg-center" style:background-image="url({background})">
 		<DarkOverlay class="h-full">
 			<InfiniteScroll class="h-full items-center justify-center gap-16">
-				{#each SCROLLER_BRANDS as brand}
+				{#each SCROLLER_BRANDS as brand, i (i)}
 					<div class="flex h-20 w-40 shrink-0 items-center justify-center">
 						<a
 							href={brand.url}

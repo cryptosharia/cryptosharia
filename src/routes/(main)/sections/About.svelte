@@ -42,7 +42,7 @@
 			<div>
 				<Title size="sm" useSeparator={false} class="text-left">Community Goals</Title>
 				<ul>
-					{#each goals as goal}
+					{#each goals as goal (goal)}
 						<li class="relative mb-2">
 							<div
 								class="absolute top-1.5 -left-9.75 size-3 rounded-full bg-primary lg:-left-13.75"

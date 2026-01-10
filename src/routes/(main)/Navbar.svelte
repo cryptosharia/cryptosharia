@@ -3,6 +3,7 @@
 	import logo1 from '$lib/assets/logo1.png';
 	import { cn } from '$lib/utils';
 	import { Button } from '$lib/components/ui/button';
+	import { resolve } from '$app/paths';
 
 	type Link = {
 		text: string;
@@ -73,7 +74,10 @@
 <header class="fixed top-0 left-0 z-50 h-16 w-full shadow-sm backdrop-blur-lg">
 	<nav class="mx-auto flex h-full max-w-7xl items-center justify-between fl-px-4/12">
 		<!-- Brand/Logo -->
-		<a href="/" class="group flex items-center gap-x-2 transition-transform active:scale-95">
+		<a
+			href={resolve('/')}
+			class="group flex items-center gap-x-2 transition-transform active:scale-95"
+		>
 			<img src={logo1} alt="Logo" class="fl-size-9/10" />
 			<span
 				class="font-serif fl-text-xl/2xl font-semibold text-primary transition-colors group-hover:text-primary/80"
@@ -84,7 +88,7 @@
 
 		<!-- Desktop Menu -->
 		<ul class="hidden items-center fl-gap-x-6/8 md:flex">
-			{#each links as link}
+			{#each links as link (link.href)}
 				<li>
 					{@render navLink(link)}
 				</li>
@@ -144,7 +148,7 @@
 		style:transform={isDrawerOpen ? 'translateY(0)' : `translateY(-${drawerHeight + 100}px)`}
 	>
 		<ul class="flex flex-col gap-y-2">
-			{#each links as link}
+			{#each links as link (link.href)}
 				<li class="border-b border-border/50 py-2 last:border-0 last:pt-4">
 					{@render navLink(link, true)}
 				</li>

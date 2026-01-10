@@ -32,7 +32,7 @@
 {/snippet}
 
 <span class="flex flex-col gap-y-1">
-	{#each reversed ? reversedColors : colors as color}
+	{#each reversed ? reversedColors : colors as color (color)}
 		{@render line(color)}
 	{/each}
 </span>

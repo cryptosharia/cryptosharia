@@ -35,7 +35,7 @@
 		style:--bg-image="url({background})"
 		class="w-full bg-(image:--bg-image) bg-cover bg-fixed bg-center bg-no-repeat"
 	>
-		<DarkOverlay class="pb-15 pt-5">
+		<DarkOverlay class="pt-5 pb-15">
 			<PageSection maxWidth="6xl">
 				<div class="flex flex-col gap-20">
 					<!-- Poster Section -->
@@ -62,7 +62,7 @@
 					<!-- Modules Section (Crypto & Sharia) -->
 					<!-- Mobile: Crypto Top, Sharia Bottom (via flex-col-reverse on DOM [Sharia, Crypto]) -->
 					<!-- Desktop: Sharia Left, Crypto Right -->
-					<div class="order-2 flex flex-col-reverse gap-y-20 md:order-4 md:flex-row gap-x-4">
+					<div class="order-2 flex flex-col-reverse gap-x-4 gap-y-20 md:order-4 md:flex-row">
 						<!-- Sharia Module -->
 						<div class="flex-1">
 							{@render sectionTitle('Modul Syariah')}
@@ -112,7 +112,7 @@
 				{@render sectionTitle('Testimoni')}
 
 				<InfiniteScroll speed="normal" class="gap-4">
-					{#each testimonials as testimonial, i}
+					{#each testimonials as testimonial, i (testimonial)}
 						<img
 							src={testimonial}
 							alt="Testimonial {i + 1}"
@@ -135,7 +135,7 @@
 						href="https://berbagi.link/cryptosharia"
 						size="lg"
 						class="peer order-2 border-white fl-text-base/xl font-bold hover:border-primary"
-						>{'< Join Sekarang >'}</Button
+						>&lt; Join Sekarang &gt;</Button
 					>
 					<DiscordIcon
 						class="transition-color order-1 size-10 translate-x-2 -rotate-90 text-white peer-hover:text-primary"

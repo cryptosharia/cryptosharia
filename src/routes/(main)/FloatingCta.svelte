@@ -55,7 +55,7 @@
 		Join Komunitas
 	</div>
 	<div class="flex flex-row justify-around">
-		{#each links as link}
+		{#each links as link (link.name)}
 			<span class="fl-size-10/12 transition-transform hover:scale-110">
 				<a href={link.url} target="_blank">
 					<link.Icon />
