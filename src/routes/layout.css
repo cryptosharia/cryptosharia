@@ -128,7 +128,8 @@
 
 	html {
 		scrollbar-width: thin;
-		@apply scroll-smooth;
+		/* Add scroll-pt to prevent navbar from covering title when auto scroll to a section */
+		@apply scroll-pt-16 scroll-smooth;
 	}
 
 	body {
