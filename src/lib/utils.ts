@@ -16,11 +16,15 @@ export type WithElementRef<T, U extends HTMLElement = HTMLElement> = T & { ref?:
 //
 //
 
-export const getPageHeight = () => document.documentElement.offsetHeight;
+export function getPageHeight() {
+	return document.documentElement.offsetHeight;
+}
 
-export const getViewportHeight = () => document.documentElement.clientHeight;
+export function getViewportHeight() {
+	return document.documentElement.clientHeight;
+}
 
-export default function formatDate(date: Date, monthType: 'text' | 'number' = 'text'): string {
+export function formatDate(date: Date, monthType: 'text' | 'number' = 'text'): string {
 	const d = date.getDate();
 	const m = date.getMonth(); // 0-indexed
 	const y = date.getFullYear();
