@@ -6,8 +6,8 @@
 		tadzimulQuranAnNaajiyah,
 		berbagiLink
 	} from '$lib/assets/partners';
-	import DarkOverlay from '$lib/components/DarkOverlay.svelte';
-	import InfiniteScroll from '$lib/components/InfiniteScroll.svelte';
+	import { DarkOverlay } from '$lib/components/ui/dark-overlay';
+	import { InfiniteScroll } from '$lib/components/ui/infinite-scroll';
 
 	const BRANDS = [
 		{

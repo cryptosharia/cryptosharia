@@ -1,7 +1,7 @@
 <script lang="ts">
 	import heroBg from '$lib/assets/hero-bg.avif';
 	import logo2 from '$lib/assets/logo2.png';
-	import DarkOverlay from '$lib/components/DarkOverlay.svelte';
+	import { DarkOverlay } from '$lib/components/ui/dark-overlay';
 </script>
 
 <section

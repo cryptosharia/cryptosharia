@@ -1,9 +1,9 @@
 <script>
-	import Hero from './sections/Hero.svelte';
-	import About from './sections/About.svelte';
-	import Team from './sections/Team.svelte';
-	import Discord from './sections/Discord.svelte';
-	import Partners from './sections/Partners.svelte';
+	import Hero from './_components/sections/Hero.svelte';
+	import About from './_components/sections/About.svelte';
+	import Team from './_components/sections/Team.svelte';
+	import Discord from './_components/sections/Discord.svelte';
+	import Partners from './_components/sections/Partners.svelte';
 </script>
 
 <Hero />

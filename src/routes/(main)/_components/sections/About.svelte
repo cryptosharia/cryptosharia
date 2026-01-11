@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { btc, eth, sol, sui } from '$lib/assets/icons';
-	import PageSection from '$lib/components/PageSection.svelte';
-	import Title from '$lib/components/Title.svelte';
+	import PageSection from '$lib/components/layout/PageSection.svelte';
+	import Title from '$lib/components/layout/Title.svelte';
 
 	const goals = [
 		'Menjadi pusat edukasi dan informasi aset crypto sesuai syariah di Indonesia.',

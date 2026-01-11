@@ -1,8 +1,8 @@
 <script lang="ts">
-	import GradientDivider from '$lib/components/GradientDivider.svelte';
-	import DarkOverlay from '$lib/components/DarkOverlay.svelte';
-	import PageSection from '$lib/components/PageSection.svelte';
-	import Title from '$lib/components/Title.svelte';
+	import { GradientDivider, PageSection, Title } from '$lib/components/layout';
+	import { DarkOverlay } from '$lib/components/ui/dark-overlay';
+	import { InfiniteScroll } from '$lib/components/ui/infinite-scroll';
+	import { Button } from '$lib/components/ui/button';
 	import {
 		background,
 		cryptoModule,
@@ -15,8 +15,6 @@
 		shariaModule
 	} from '$lib/assets/discord';
 	import * as t from '$lib/assets/discord/testimonials';
-	import InfiniteScroll from '$lib/components/InfiniteScroll.svelte';
-	import { Button } from '$lib/components/ui/button';
 	import { DiscordIcon } from '$lib/components/icons';
 
 	const testimonials = Object.values(t);

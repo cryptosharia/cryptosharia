@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { cn } from '$lib/utils';
 	import type { HTMLAttributes } from 'svelte/elements';
-	import { Separator } from './ui/separator';
+	import { Separator } from '$lib/components/ui/separator';
 
 	type Props = HTMLAttributes<HTMLHeadingElement> & {
 		size?: 'sm' | 'md' | 'lg' | 'xl';

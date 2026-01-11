@@ -1,7 +1,7 @@
 <script lang="ts">
-	import FloatingCta from './FloatingCta.svelte';
-	import Navbar from './Navbar.svelte';
-	import ThemeSwitcher from './ThemeSwitcher.svelte';
+	import FloatingCta from './_components/layout/FloatingCta.svelte';
+	import Navbar from './_components/layout/Navbar.svelte';
+	import ThemeSwitcher from './_components/layout/ThemeSwitcher.svelte';
 
 	let { children } = $props();
 </script>

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Title from '$lib/components/Title.svelte';
+	import Title from '$lib/components/layout/Title.svelte';
 	import { pembina1, pembina2, pembina3, pembina4, pembina5 } from '$lib/assets/team';
-	import PageSection from '$lib/components/PageSection.svelte';
+	import PageSection from '$lib/components/layout/PageSection.svelte';
 
 	const people = [
 		{
