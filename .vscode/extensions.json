@@ -3,7 +3,7 @@
 		"svelte.svelte-vscode",
 		"ms-azuretools.vscode-docker",
 		"dbaeumer.vscode-eslint",
-		"prettier.prettier-vscode",
+		"esbenp.prettier-vscode",
 		"bradlc.vscode-tailwindcss"
 	]
 }
