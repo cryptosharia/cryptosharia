@@ -1,16 +1,23 @@
-## Hi there 👋
+# CryptoSharia
 
-<!--
-**cryptosharia/cryptosharia** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+**CryptoSharia** is an **Islamic-based crypto education platform** that bridges **Web3 innovation** with **Sharia principles**.  
+The platform was created to help the Muslim community **understand, analyze, and invest** in crypto assets **ethically and responsibly**, while remaining true to **Islamic values**.
 
-Here are some ideas to get you started:
+## 🧭 Overview
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+**CryptoSharia** aims to become a trusted hub for **halal crypto literacy**, combining **education**, **analysis**, and **community engagement**.  
+It introduces Muslims to the world of Web3 and decentralized finance (DeFi) in a way that aligns with **Sharia ethics** — promoting awareness, transparency, and responsible investing.
+
+## 📜 Mission
+
+To build a **responsible and ethical crypto ecosystem** that empowers Muslims to participate in the digital economy **safely, profitably, and in full accordance with Islamic values**.  
+**CryptoSharia** represents a new movement that unites **faith, finance, and future technology** — making crypto both **ethical and empowering**.
+
+> _“Where else can you find a crypto community that not only teaches profit but also upholds Sharia and embraces the future of technology?”_
+
+## 🔗 Links
+
+### 🌐 **Website:** [cryptosharia.id](https://cryptosharia.id)  
+
+### 🧑🏻‍💻 **Developers:**
+- [**Daffa Ilhami**](https://github.com/mdaffailhami)
